@@ -241,6 +241,10 @@ function togglePause() {
 }
 
 function loop(ts) {
+  if (gameOver) {
+    draw();
+    return;
+  }
   const dt = ts - lastTime;
   lastTime = ts;
   dropAccum += dt;
